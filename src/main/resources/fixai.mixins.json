@@ -1,0 +1,8 @@
+{
+  "minVersion": "0.8",
+  "package": "fr.cyn.fixai.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "mixins": [
+    "EntityMixin_ActivationRangeMixin"
+  ]
+}
