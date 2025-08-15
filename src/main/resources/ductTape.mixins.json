@@ -1,0 +1,11 @@
+{
+  "minVersion": "0.8",
+  "package": "fr.tess.ducttape.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "mixins": [
+    "special.mc.disableSlowLogin",
+    "special.mohist.EntityMixin_ActivationRangeMixin",
+    "VanillaGolf.EntityCollisionMixin",
+    "VanillaGolf.GolfBallEntityMixin"
+  ]
+}
