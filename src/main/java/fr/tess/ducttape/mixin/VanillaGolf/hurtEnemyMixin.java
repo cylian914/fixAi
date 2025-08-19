@@ -1,5 +1,6 @@
 package fr.tess.ducttape.mixin.VanillaGolf;
 
+import fr.tess.ducttape.DuctTape;
 import net.golf.golf.init.GolfModEnchantments;
 import net.golf.golf.init.GolfModItems;
 import net.golf.golf.procedures.HitwithClubProcedure;
@@ -21,15 +22,16 @@ public class hurtEnemyMixin {
         if (!(sourceentity instanceof LivingEntity))
             ci.cancel();
         LivingEntity le = (LivingEntity) sourceentity;
-        float enchantBonus = 0.5f * EnchantmentHelper.getEnchantmentLevel(GolfModEnchantments.WEDGING.get(), le);
-        int weaponBonus = getBonus(le.getUseItem());
+        float enchantBonus = 0.5f * EnchantmentHelper.getEnchantments(le.getMainHandItem()).get(GolfModEnchantments.WEDGING.get());
+        int weaponBonus = getBonus(le.getMainHandItem());
 
+        DuctTape.LOGGER.warn("b: {}", enchantBonus);
         float finalBonus = enchantBonus + weaponBonus;
         entity.addDeltaMovement(new Vec3(sourceentity.getLookAngle().x * finalBonus, Math.abs(sourceentity.getLookAngle().y), sourceentity.getLookAngle().z * finalBonus));
         ci.cancel();
     }
 
-    //TODO use tag, was too lazy
+    //TODO make it expendable
     @Unique
     private static int getBonus(ItemStack item) {
         if (item.is(GolfModItems.WOODEN_CLUB.get()))

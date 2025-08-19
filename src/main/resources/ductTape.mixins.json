@@ -6,6 +6,7 @@
     "special.mc.disableSlowLogin",
     "special.spigot.EntityMixin_ActivationRangeMixin",
     "special.spigot.PluginLoadEvent",
+    "VanillaGolf.EnchentmentMixin",
     "VanillaGolf.EntityCollisionMixin",
     "VanillaGolf.GolfBallEntityMixin",
     "VanillaGolf.hurtEnemyMixin"
