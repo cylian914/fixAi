@@ -4,8 +4,10 @@
   "compatibilityLevel": "JAVA_17",
   "mixins": [
     "special.mc.disableSlowLogin",
-    "special.mohist.EntityMixin_ActivationRangeMixin",
+    "special.spigot.EntityMixin_ActivationRangeMixin",
+    "special.spigot.PluginLoadEvent",
     "VanillaGolf.EntityCollisionMixin",
-    "VanillaGolf.GolfBallEntityMixin"
+    "VanillaGolf.GolfBallEntityMixin",
+    "VanillaGolf.hurtEnemyMixin"
   ]
 }

@@ -1,4 +1,4 @@
-package fr.tess.ducttape.mixin.special.mohist;
+package fr.tess.ducttape.mixin.special.spigot;
 
 import net.minecraft.world.entity.Entity;
 import org.spongepowered.asm.mixin.Mixin;

@@ -1,6 +1,8 @@
 package fr.tess.ducttape.mixin.VanillaGolf;
 
 import fr.tess.ducttape.BallExtension;
+import fr.tess.ducttape.DuctTape;
+import fr.tess.ducttape.pluginApi.chat.ChatFormating;
 import net.golf.golf.entity.GolfBallEntity;
 import net.golf.golf.init.GolfModEntities;
 import net.golf.golf.init.GolfModItems;
@@ -48,7 +50,7 @@ public class EntityCollisionMixin {
         List<Player> brodcast = playerScored.level().getEntitiesOfClass(Player.class, SearchSize);
         brodcast.remove(playerScored);
 
-        Component text = playerScored.getName().copy().append("§e§o finished golfing with a score of " + score);
+        Component text = Component.literal(ChatFormating.format.getDisplayName(playerScored) + " §e§ofinished golfing with a score of " + score);
         brodcast.forEach((e) -> {
             e.sendSystemMessage(text);
         });

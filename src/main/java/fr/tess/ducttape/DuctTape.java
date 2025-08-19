@@ -1,6 +1,11 @@
 package fr.tess.ducttape;
 
 import com.mojang.logging.LogUtils;
+import fr.tess.ducttape.pluginApi.chat.ChatFormating;
+import fr.tess.ducttape.pluginApi.chat.EssentialsChatFormating;
+import fr.tess.ducttape.pluginApi.event.PluginEventBus;
+import fr.tess.ducttape.pluginApi.event.PluginLoadedEvent;
+import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.server.ServerStartingEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -16,15 +21,19 @@ public class DuctTape {
     public static final String MODID = "ducttape";
     // Directly reference a slf4j logger
     public static final Logger LOGGER = LogUtils.getLogger();
-    // Create a Deferred Register to hold Blocks which will all be registered under the "fixai" namespace
+
+
+
     public DuctTape() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+   //     MinecraftForge.EVENT_BUS.addListener(this::onServerStarting); // example to get forge event bus
+        PluginEventBus.PluginApiBus.addListener(ChatFormating::pluginLoaded);
+        PluginEventBus.PluginApiBus.start();
     }
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call
     @SubscribeEvent
     public void onServerStarting(ServerStartingEvent event) {
         // Do something when the server starts
-        LOGGER.info("HELLO from server starting");
     }
 }
