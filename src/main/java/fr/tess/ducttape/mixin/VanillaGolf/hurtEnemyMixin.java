@@ -25,7 +25,6 @@ public class hurtEnemyMixin {
         float enchantBonus = 0.5f * EnchantmentHelper.getEnchantments(le.getMainHandItem()).get(GolfModEnchantments.WEDGING.get());
         int weaponBonus = getBonus(le.getMainHandItem());
 
-        DuctTape.LOGGER.warn("b: {}", enchantBonus);
         float finalBonus = enchantBonus + weaponBonus;
         entity.addDeltaMovement(new Vec3(sourceentity.getLookAngle().x * finalBonus, Math.abs(sourceentity.getLookAngle().y), sourceentity.getLookAngle().z * finalBonus));
         ci.cancel();

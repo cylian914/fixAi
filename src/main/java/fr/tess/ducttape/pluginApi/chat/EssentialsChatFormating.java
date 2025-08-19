@@ -24,7 +24,6 @@ public class EssentialsChatFormating extends ChatFormating {
         try {
             chatLowest.callEvent(fakeEvent);
         } catch (EventException e) {
-            DuctTape.LOGGER.warn("Exc: {}", e.getCause().toString());
             return super.FormatMessage(p, message);
         }
         return String.format(fakeEvent.getFormat(), getDisplayName(p), fakeEvent.getMessage());
