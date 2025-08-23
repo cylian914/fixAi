@@ -1,8 +1,6 @@
 package fr.tess.ducttape.pluginApi.event;
 
-import fr.tess.ducttape.DuctTape;
 import net.minecraftforge.eventbus.api.Event;
-import org.bukkit.event.Listener;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.RegisteredListener;
 

@@ -1,6 +1,7 @@
 package fr.tess.ducttape.pluginApi.chat;
 
-import fr.tess.ducttape.DuctTape;
+import fr.tess.ducttape.pluginApi.event.PluginEventBus;
+import fr.tess.ducttape.pluginApi.event.PluginLoadedEvent;
 import fr.tess.ducttape.pluginApi.event.PluginRegisterEventEvent;
 import net.minecraft.world.entity.player.Player;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -10,6 +11,7 @@ import org.bukkit.event.player.AsyncPlayerChatEvent;
 import org.bukkit.plugin.RegisteredListener;
 
 import java.lang.reflect.InvocationTargetException;
+import java.util.Objects;
 import java.util.Set;
 
 
@@ -54,5 +56,13 @@ public class EssentialsChatFormating extends ChatFormating {
                 chatLowest = listener;
             }
         });
+    }
+
+    @SubscribeEvent
+    public static void pluginLoaded(PluginLoadedEvent event) {
+        if (Objects.equals(event.getPluginName(), "EssentialsChat")) {
+            format = new EssentialsChatFormating();
+            PluginEventBus.PluginApiBus.addListener(((EssentialsChatFormating)format)::setHandler);
+        }
     }
 }
