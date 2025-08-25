@@ -149,6 +149,7 @@ dependencies {
     implementation('plugin:EssentialsXChat:2.22.0')
 
     implementation('mcreator:VanillaGolf:1.0.1-1.20.1')
+    implementation('lag:letsdo-farm_and_charm:forge-1.0.12')
     // For more info:
     // http://www.gradle.org/docs/current/userguide/artifact_dependencies_tutorial.html
     // http://www.gradle.org/docs/current/userguide/dependency_management.html

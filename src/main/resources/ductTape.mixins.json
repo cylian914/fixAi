@@ -3,7 +3,9 @@
   "package": "fr.tess.ducttape.mixin",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
-    "special.mc.disableSlowLogin",
+    "farmandlag.ChickenCoopMixin",
+    "farmandlag.ChickenLocateCoopGoalDisabledMixin",
+    "farmandlag.PacketHandlerMixin",
     "special.spigot.EntityMixin_ActivationRangeMixin",
     "special.spigot.PluginLoadEvent",
     "VanillaGolf.EnchentmentMixin",
