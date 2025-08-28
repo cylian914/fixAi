@@ -150,6 +150,11 @@ dependencies {
 
     implementation('mcreator:VanillaGolf:1.0.1-1.20.1')
     implementation('lag:letsdo-farm_and_charm:forge-1.0.12')
+    implementation('plane:ImmersiveVehicles:1.20.1-22.18.0-pre')
+
+    implementation('ftb:ftb-chunks-forge:2001.3.6')
+    implementation('ftb:ftb-teams-forge:2001.3.1')
+    implementation('ftb:ftb-library-forge:2001.2.9')
     // For more info:
     // http://www.gradle.org/docs/current/userguide/artifact_dependencies_tutorial.html
     // http://www.gradle.org/docs/current/userguide/dependency_management.html

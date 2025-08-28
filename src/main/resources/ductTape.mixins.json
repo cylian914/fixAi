@@ -6,6 +6,7 @@
     "farmandlag.ChickenCoopMixin",
     "farmandlag.ChickenLocateCoopGoalDisabledMixin",
     "farmandlag.PacketHandlerMixin",
+    "mts.WrapperWorldMixin",
     "special.spigot.EntityMixin_ActivationRangeMixin",
     "special.spigot.PluginLoadEvent",
     "VanillaGolf.EnchentmentMixin",
