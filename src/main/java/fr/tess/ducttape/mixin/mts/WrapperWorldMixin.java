@@ -23,10 +23,7 @@ public class WrapperWorldMixin {
     @Inject(method = "destroyBlock", at = @At("HEAD"), cancellable = true)
     private void ftbChunkCompat(Point3D position, boolean spawnDrops, CallbackInfo ci) {
         if (FTBChunksAPI.api().getManager().getChunk(new ChunkDimPos(world.dimension(), ((int) position.x) >> 4, ((int) position.z) >> 4)) != null) {
-            DuctTape.LOGGER.warn("stoped");
             ci.cancel();
-            return;
         }
-        DuctTape.LOGGER.warn("continue");
     }
 }
